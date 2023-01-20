@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "This is MERN STACK Api Server Using Express MongoDB",
   "main": "index.js",
-  "engines": {
-    "node": "12.x"
-  },
   "scripts": {
     "start": "node index.js"
   },
