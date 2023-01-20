@@ -36,7 +36,9 @@ app.use("/api/order", OrderRoutes);
 app.use("/api/payment", PaymentRoutes);
 
 
-
+app.get("/",(req,res) => {
+  res.send("Amazon Server Working");
+})
 
 // DB Connction
 
