@@ -1,9 +1,20 @@
 const router = require("express").Router();
-const  userController = require('./../Controllers/userControll.js');
+const  {updateUser ,deleteUser, getuser, userStatus} = require('../Controllers/userController.js');
+const { verifyToken, verifyandAuthCheck, verifyAdminCheck } = require("../verifyToken.js");
 
 
-router.get("/" , userController.SignUp );
 
+// Update user account
+router.put("/:id" ,  verifyandAuthCheck ,updateUser );
+
+// delete user account
+router.delete("/:id" , verifyandAuthCheck, deleteUser );
+
+// get All user Admin -App
+router.get("/", verifyAdminCheck, getuser );
+
+// get All user Admin -App
+router.get("/status", verifyAdminCheck, userStatus );
   
 
 
